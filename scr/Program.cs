@@ -5,7 +5,11 @@ namespace CourseWork.src
 	/// <summary>
 	/// 
 	/// </summary>
-	public class Main
+	public class Program
 	{
+		public static void Main(string[] args)
+        {
+
+        }
 	}
 }

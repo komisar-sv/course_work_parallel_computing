@@ -1,0 +1,122 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{D6FA03C6-ACD9-41BB-9A30-372A473AE201}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>CourseWorkVS</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".git\COMMIT_EDITMSG" />
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\FETCH_HEAD" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-merge-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\dev" />
+    <None Include=".git\logs\refs\heads\main" />
+    <None Include=".git\logs\refs\remotes\origin\dev" />
+    <None Include=".git\logs\refs\remotes\origin\HEAD" />
+    <None Include=".git\objects\07\ea01b283fae658f1d50c43dc3233dc363ed84f" />
+    <None Include=".git\objects\0f\dfab85a9a1a33abc867aed6ad9deddacf93017" />
+    <None Include=".git\objects\13\51366b8ae79819c7eaab3d4344cb952e69d83d" />
+    <None Include=".git\objects\22\edc39a790cf979069a96e8f8fbf19bf027bee5" />
+    <None Include=".git\objects\2b\db8f34870ffd192ab21690cfb0dec268772a7d" />
+    <None Include=".git\objects\58\8056d31a7df294e7916cf7e3331026dae488aa" />
+    <None Include=".git\objects\67\d6ff7edda54cad012b6cfb06be70f51ef41970" />
+    <None Include=".git\objects\6e\bc01b41a89f2bab0e8e548f3c6a9975fa6c956" />
+    <None Include=".git\objects\75\8a053e25ff695a2819a26b9596f448461559e2" />
+    <None Include=".git\objects\83\348b9188f7c418ef808f429f765efa1822e3a0" />
+    <None Include=".git\objects\92\31fab898b90115cf001d1852b8decfd8cccc76" />
+    <None Include=".git\objects\9e\138e499ca2434f3b5d73eb9f8f813c4fb09ead" />
+    <None Include=".git\objects\a7\31dc48bc27f3e21c070661eb9aafea40638767" />
+    <None Include=".git\objects\bb\393e3ca19878b4565c53f37266d69a7dfe8ee8" />
+    <None Include=".git\objects\db\d1b70e9ddd46a3a6899fd7655d2e4c1ed58355" />
+    <None Include=".git\objects\dc\70433ef95b63e445da675b2a5e68f589c30283" />
+    <None Include=".git\objects\e1\aced3bf029cb046632e2aa7e9b4467082634d2" />
+    <None Include=".git\objects\e2\fa0fc6352483de415916c431c006365a40434c" />
+    <None Include=".git\objects\e5\f0eaf79b7c45075008a695b7f5ff367b8a0e03" />
+    <None Include=".git\objects\e9\2ede29d76aefe079835aeae278da5341f6e15c" />
+    <None Include=".git\objects\f8\b4888565caadc7510be75682268d6c18edd6de" />
+    <None Include=".git\objects\ff\870290ee12b1978a97b584aa60bb6d1485e784" />
+    <None Include=".git\objects\pack\pack-a598239123cc9c052d89505052ac13c0db403569.idx" />
+    <None Include=".git\objects\pack\pack-a598239123cc9c052d89505052ac13c0db403569.pack" />
+    <None Include=".git\ORIG_HEAD" />
+    <None Include=".git\packed-refs" />
+    <None Include=".git\refs\heads\dev" />
+    <None Include=".git\refs\heads\main" />
+    <None Include=".git\refs\remotes\origin\dev" />
+    <None Include=".git\refs\remotes\origin\HEAD" />
+    <None Include=".vs\CourseWork\v16\.suo" />
+    <None Include=".vs\CourseWork\v16\TestStore\0\000.testlog" />
+    <None Include=".vs\CourseWork\v16\TestStore\0\testlog.manifest" />
+    <None Include=".vs\ProjectSettings.json" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".git\ms-persist.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="scr\IndexCalculation.cs" />
+    <Compile Include="scr\Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\refs\tags\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
