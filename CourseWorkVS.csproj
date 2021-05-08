@@ -108,8 +108,9 @@
     <Content Include=".git\ms-persist.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="scr\IndexCalculation.cs" />
-    <Compile Include="scr\Program.cs" />
+    <Compile Include="BusinessLogic\IndexCalculation.cs" />
+    <Compile Include="BusinessLogic\Launcher.cs" />
+    <Compile Include="BusinessLogic\IndexCalculateStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".git\objects\info\" />
