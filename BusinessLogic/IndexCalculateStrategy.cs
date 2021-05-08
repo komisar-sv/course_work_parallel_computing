@@ -35,11 +35,6 @@ namespace CourseWorkVS.BusinessLogic
                 Console.WriteLine("{0} is not a valid directory.", path);
                 return false;
             }
-            
-            //foreach(var file in files)
-            //{
-            //    Console.WriteLine($"{file}");
-            //}
 
             Console.Write("Enter a count of threads (from 1 to 10): ");
             var countOfTheads = Convert.ToInt32(Console.ReadLine());
@@ -76,25 +71,8 @@ namespace CourseWorkVS.BusinessLogic
             }
 
             Console.WriteLine("Count of origin words: {0}", Index.Count);
-            var index = Index.ToArray();
-            for (var i = 0; i < 10; i++)
-            {
-                var indexPair = index[i];
-                Console.WriteLine(indexPair.Key);
-                foreach (var filaPath in indexPair.Value)
-                {
-                    Console.WriteLine(filaPath);
-                }
-            }
 
-            //foreach(var indexPair in Index)
-            //{
-            //    Console.WriteLine(indexPair.Key);
-            //    foreach(var filaPath in indexPair.Value)
-            //    {
-            //        Console.WriteLine(filaPath);
-            //    }
-            //}
+            saveResultFile();
 
             return true;
         }
@@ -118,6 +96,22 @@ namespace CourseWorkVS.BusinessLogic
                 foreach (var position in item.Value)
                 {
                     Index[item.Key].TryAdd(position);
+                }
+            }
+        }
+
+        private void saveResultFile()
+        {
+            var pathForSavingIndex = "C://LAB_3_COURSE_2sem/Paral/CourseWork/datasets/resultIndex.txt";
+            using (var sw = new StreamWriter(pathForSavingIndex, false))
+            {
+                foreach(var indexPair in Index)
+                {
+                    sw.WriteLine(indexPair.Key);
+                    foreach(var position in indexPair.Value)
+                    {
+                        sw.WriteLine(position);
+                    }
                 }
             }
         }

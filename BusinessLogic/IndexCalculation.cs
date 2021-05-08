@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace CourseWorkVS.BusinessLogic
 {
@@ -30,17 +31,17 @@ namespace CourseWorkVS.BusinessLogic
                 {
                     while (!sr.EndOfStream)
                     {
-                        words.AddRange(sr.ReadLine().Replace("<br />", " ").Replace("[^A-Za-z\\s]", "").Replace(" +", " ").ToLower().Split(' ').Distinct());
+                        var stringBuffer = sr.ReadLine()
+                            .Replace("<br />", " ")
+                            .ToLower()
+                            .Trim();
+
+                        words.AddRange(Regex.Replace(stringBuffer, @"[^\w\s]", " ").Split(' ').Distinct());
                     }
                 }
 
-                foreach(var word in words)
+                foreach (var word in words)
                 {
-                    if (word.Length == 1)
-                    {
-                        continue;
-                    }
-
                     if (!resultIndex.TryGetValue(word, out var positions))
                     {
                         positions = new List<string> { filePath };
@@ -53,6 +54,7 @@ namespace CourseWorkVS.BusinessLogic
             }
 
             Console.WriteLine("Thread with start index {0} finished!", startIndex);
+            Console.WriteLine("Count of origin words in one thread: {0}", resultIndex.Count);
             return resultIndex;
         }
     }
