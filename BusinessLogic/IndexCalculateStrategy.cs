@@ -21,7 +21,7 @@ namespace CourseWorkVS.BusinessLogic
             Index = new ConcurrentDictionary<string, BlockingCollection<string>>();
         }
 
-        public void Exec()
+        public bool Exec()
         {
             var path = "C://LAB_3_COURSE_2sem/Paral/CourseWork/datasets/train/";
 
@@ -33,7 +33,7 @@ namespace CourseWorkVS.BusinessLogic
             else
             {
                 Console.WriteLine("{0} is not a valid directory.", path);
-                return;
+                return false;
             }
             
             //foreach(var file in files)
@@ -52,7 +52,7 @@ namespace CourseWorkVS.BusinessLogic
 
             else
             {
-                var tasks = new Task<Dictionary<string, IEnumerable<string>>>[countOfTheads];
+                var tasks = new Task<Dictionary<string, List<string>>>[countOfTheads];
                 for(var taskId = 0; taskId < countOfTheads; taskId++)
                 {
                     var indexCalculation = new IndexCalculation();
@@ -60,7 +60,7 @@ namespace CourseWorkVS.BusinessLogic
                     var startIndex = files.Length / countOfTheads * taskId;
                     var endIndex = taskId == countOfTheads - 1 ? files.Length : files.Length / countOfTheads * (taskId + 1);
 
-                    tasks[taskId] = Task<Dictionary<string, IEnumerable<string>>>.
+                    tasks[taskId] = Task<Dictionary<string, List<string>>>.
                         Factory.StartNew(() => { return indexCalculation.Calculate(files, startIndex, endIndex); });
                 }
 
@@ -75,10 +75,31 @@ namespace CourseWorkVS.BusinessLogic
                 }
             }
 
-            
+            Console.WriteLine("Count of origin words: {0}", Index.Count);
+            var index = Index.ToArray();
+            for (var i = 0; i < 10; i++)
+            {
+                var indexPair = index[i];
+                Console.WriteLine(indexPair.Key);
+                foreach (var filaPath in indexPair.Value)
+                {
+                    Console.WriteLine(filaPath);
+                }
+            }
+
+            //foreach(var indexPair in Index)
+            //{
+            //    Console.WriteLine(indexPair.Key);
+            //    foreach(var filaPath in indexPair.Value)
+            //    {
+            //        Console.WriteLine(filaPath);
+            //    }
+            //}
+
+            return true;
         }
 
-        private void updateResultIndex(Dictionary<string, IEnumerable<string>> itemsToAdd)
+        private void updateResultIndex(Dictionary<string, List<string>> itemsToAdd)
         {
             foreach(var item in itemsToAdd)
             {

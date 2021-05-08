@@ -1,11 +1,17 @@
-﻿namespace CourseWorkVS.BusinessLogic
+﻿using System;
+
+namespace CourseWorkVS.BusinessLogic
 {
     class Launcher
     {
         public static void Main(string[] args)
         {
             var indexCalculateStrategy = new IndexCalculateStrategy();
-            indexCalculateStrategy.Exec();
+            if(!indexCalculateStrategy.Exec())
+            {
+                Console.WriteLine("Error during of the building an index!");
+            }
+            Console.ReadLine();
         }
     }
 }
