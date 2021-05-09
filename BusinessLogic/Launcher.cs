@@ -11,7 +11,6 @@ namespace CourseWorkVS.BusinessLogic
             {
                 Console.WriteLine("Error during of the building an index!");
             }
-            Console.ReadLine();
         }
     }
 }

@@ -3,3 +3,4 @@ C:\LAB_3_COURSE_2sem\Paral\CourseWork\bin\Debug\ConsoleApplication.pdb
 C:\LAB_3_COURSE_2sem\Paral\CourseWork\obj\x86\Debug\CourseWorkVS.csproj.CoreCompileInputs.cache
 C:\LAB_3_COURSE_2sem\Paral\CourseWork\obj\x86\Debug\ConsoleApplication.exe
 C:\LAB_3_COURSE_2sem\Paral\CourseWork\obj\x86\Debug\ConsoleApplication.pdb
+C:\LAB_3_COURSE_2sem\Paral\CourseWork\obj\x86\Debug\CourseWorkVS.csprojAssemblyReference.cache

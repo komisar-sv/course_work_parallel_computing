@@ -31,12 +31,14 @@ namespace CourseWorkVS.BusinessLogic
                 {
                     while (!sr.EndOfStream)
                     {
-                        var stringBuffer = sr.ReadLine()
+                        var stringBuffer = sr.ReadLine();
+                        words.AddRange(Regex
+                            .Replace(stringBuffer, @"[^\w\s]", " ")
                             .Replace("<br />", " ")
                             .ToLower()
-                            .Trim();
-
-                        words.AddRange(Regex.Replace(stringBuffer, @"[^\w\s]", " ").Split(' ').Distinct());
+                            .Trim()
+                            .Split(' ')
+                            .Distinct());
                     }
                 }
 
